@@ -1,0 +1,64 @@
+/* Call now button css  */
+.custom-call-now-btn {
+  background-color: white;
+  color: rgb(9, 170, 9);
+  width: auto;
+}
+
+.custom-call-now-btn:hover {
+  background-color: rgb(54, 164, 54);
+  color: white;
+}
+
+/* Chat now button css  */
+.custom-chat-now-btn {
+  background-color: white;
+  color: rgb(252, 115, 115);
+  width: auto;
+}
+.custom-chat-now-btn:hover {
+  background-color: rgb(250, 89, 89);
+  color: white;
+}
+
+/* Media query for call now and chat now button */
+
+@media (min-width: 1000px) and (max-width: 1085px) {
+  .custom-call-now-btn {
+    min-width: 5rem !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+  .custom-chat-now-btn {
+    min-width: 5rem !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+}
+
+.custom-before-btn:hover {
+  background-color: orange;
+  color: white;
+}
+.custom-filters-btn {
+  background-color: orange;
+  color: white;
+}
+.custom-save-btn {
+  background-color: #ff5537;
+  color: white;
+}
+.custom-save-btn:hover {
+  background-color: #eb643b;
+}
+
+@media (max-width: 991px) {
+  .row {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1000px) {
+  .card-container-width {
+    width: 70%;
+    margin: auto;
+  }
+}

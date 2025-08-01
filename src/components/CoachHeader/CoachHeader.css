@@ -1,0 +1,115 @@
+.navbar {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 30, 90, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  height: 5rem;
+  width: 100vw;
+}
+
+/* Navbar Brand Styles */
+.navbar-brand {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+  color: white;
+  margin-left: 1rem;
+}
+.navbar-nav {
+  margin-left: 5rem;
+}
+
+/* Buttons */
+.navbar .btn {
+  margin-right: 10px;
+  width: 120px;
+  height: 40px;
+  margin-right: 5rem;
+}
+
+/* Update Offcanvas background */
+.offcanvas {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 30, 90, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  ) !important;
+  color: white;
+}
+
+/* Style Offcanvas header and close button */
+.offcanvas-header .btn-close {
+  filter: invert(1); /* Makes the close button white */
+}
+
+.offcanvas-title {
+  color: white;
+}
+
+/* Update button styles */
+.navbar .btn {
+  margin-right: 10px;
+  width: 120px;
+  height: 40px;
+  margin-right: 5rem;
+}
+
+/* Mobile menu button styles */
+.offcanvas .btn {
+  width: 250px; /* Increased button width */
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+/* Style mobile navigation links */
+.offcanvas .nav-link {
+  color: white !important;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Mobile Menu Overlay */
+
+.navbar .position-fixed.bg-white {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 30, 90, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  ) !important;
+}
+
+.navbar .position-fixed .list-unstyled .text-decoration-none {
+  color: white !important;
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    display: none !important;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  padding-right: 1rem;
+  background: transparent;
+  background-color: white;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    display: none !important;
+  }
+}

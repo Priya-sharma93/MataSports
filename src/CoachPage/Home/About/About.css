@@ -1,0 +1,122 @@
+.about-section {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 30, 90, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/* Responsive Typography */
+.platform-title {
+  font-size: 2rem;
+}
+
+.yogabannerdiv {
+  position: relative;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.yogabannerheading {
+  border-radius: 10px;
+  color: white;
+  /* background-color: black; */
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -320%);
+  padding: 20px;
+}
+
+.yogabannerheading:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.yogaimgwidth {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .platform-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .platform-title {
+    font-size: 3rem;
+  }
+}
+
+/* Step Number Styling */
+.step-number {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Platform Steps Styling */
+.platform-step h3 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.platform-step p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Service Platform Image */
+.service-platform-image {
+  height: 70vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* About Description Styling */
+.about-description p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+@media (min-width: 577px) and (max-width: 991px) {
+  .service-platform-image {
+    min-height: 300px;
+    max-height: 60vh;
+  }
+
+  .platform-steps {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .service-platform-image {
+    min-height: 400px;
+    max-height: 70vh;
+  }
+}
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .platform-steps {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-platform-image {
+    min-height: 250px;
+    max-height: 50vh;
+  }
+  .platform-steps {
+    margin-top: rem;
+  }
+  .all-step {
+    margin-top: 3rem;
+  }
+}

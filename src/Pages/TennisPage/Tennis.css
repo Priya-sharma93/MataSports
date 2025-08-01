@@ -1,0 +1,135 @@
+.tennis-main-container {
+  background: linear-gradient(
+    269.02deg,
+    rgba(233, 19, 83, 0.83) 30.84%,
+    rgba(233, 20, 84, 0.83) 50.71%,
+    rgba(248, 64, 119, 0.83) 78.74%
+  );
+  height: 100vh;
+  width: 100vw;
+}
+
+.sports {
+  font-size: 60px;
+  font-weight: 800;
+}
+.sportspara {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.i9 {
+  width: 60px;
+  height: 26px;
+  gap: 0px;
+  border-radius: 8px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+}
+.dis {
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 24.2px;
+  text-align: left;
+}
+
+.i11 {
+  width: 100px;
+  height: 70px;
+  border-radius: 8px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  top: 10%;
+  right: 50%;
+  position: absolute;
+}
+
+.i10 {
+  width: 200px;
+  height: 200px;
+  top: 1rem;
+  left: 35%;
+  position: relative;
+}
+.right-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+}
+
+.i12 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  z-index: -1;
+  margin-top: 16.7%;
+  margin-left: 12%;
+}
+
+.i13 {
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
+/* Container for bottom-right alignment */
+.btn3 {
+  position: fixed; /* Fixed positioning for the entire viewport */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  display: flex;
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+/* Styling for the first button */
+.btn1 {
+  background-color: #d80847;
+  border-color: #d80847;
+  border-radius: 50%;
+  color: #fff; /* Ensures text color is white */
+  font-size: 1.5rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn1:hover {
+  background-color: #a80636; /* Darker red on hover */
+}
+
+/* Styling for the second button */
+.btn2 {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #d80847;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn2:hover {
+  background-color: #f5f5f5; /* Slightly gray on hover */
+  color: #a80636;
+}
+
+.tennis-container {
+  height: 60vh;
+  position: relative;
+}

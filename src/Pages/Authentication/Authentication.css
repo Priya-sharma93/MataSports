@@ -1,0 +1,20 @@
+.otp-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.close-btn {
+  height: 2vw;
+  width: 2vw;
+  background-color: grey;
+  z-index: 10;
+  margin-left: 37vw;
+  margin-top: 0.5vw;
+  position: absolute;
+  /* margin-left: 38vw; */
+}

@@ -1,0 +1,91 @@
+/* CoachProfile.css */
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+  padding: 0.5em 1em;
+  border-radius: 20px;
+}
+
+.upload-cloud-icon {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-warning {
+  background-color: #ffd700;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #ffc107;
+}
+
+.file-item {
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.file-item:hover {
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    margin-bottom: 1rem;
+  }
+
+  .profileImageU {
+    height: 250px;
+    width: 250px;
+  }
+
+  .d-flex.gap-2 {
+    flex-wrap: wrap;
+  }
+
+  .btn-warning {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cloudimgDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px;
+}
+
+.threebutton {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #dee12e;
+}
+
+.buttoncancel {
+  border: none;
+  padding: 10px 20px;
+  margin-right: 5px;
+  border-radius: 5px;
+}

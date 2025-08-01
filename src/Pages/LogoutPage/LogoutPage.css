@@ -1,0 +1,141 @@
+.custom-bg {
+    background: #000000;
+  }
+  
+  .container {
+    max-width: 1300px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-right: 1px solid #000000;
+  }
+  
+  .img {
+    margin-top: 50px;
+    width: 600px;
+    height: 700px;
+  }
+  
+  .imgDiv {
+    border-right: 1px solid #000000;
+  }
+  
+  .custom-logOut {
+    color: #141cdd;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 75px;
+    text-align: center;
+  }
+  
+  .custom-para-logout {
+    color: #000000b2;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 37.5px;
+  }
+  
+  .custom-btn {
+    background: #2545b8;
+    padding: 18px 150px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23.44px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .custom-p {
+    color: #eb0f0f;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23.44px;
+  }
+  
+  .custom-loginWith {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+  }
+  
+  /* Responsive Design for small to medium screens */
+  @media (max-width: 991px) {
+    .container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .img {
+      width: 100%;
+      height: auto; /* Ensures the image is responsive */
+    }
+  
+    .custom-logOut {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  
+    .custom-para-logout {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  
+    .custom-btn {
+      padding: 15px 100px;
+      font-size: 18px;
+    }
+  
+    .custom-p {
+      font-size: 16px;
+    }
+  
+    .custom-loginWith {
+      font-size: 14px;
+    }
+  
+    .row {
+      flex-direction: column-reverse;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .custom-logOut {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  
+    .custom-para-logout {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  
+    .custom-btn {
+      padding: 15px 80px;
+      font-size: 16px;
+    }
+  
+    .custom-p {
+      font-size: 14px;
+    }
+  
+    .custom-loginWith {
+      font-size: 12px;
+    }
+  
+    .img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }

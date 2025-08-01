@@ -1,0 +1,29 @@
+.lang-color {
+  color: #14e11c;
+}
+
+.t-color {
+  color: #314cd6;
+}
+
+.btn-bg {
+  background-color: #141cdd;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-bg:hover {
+  background-color: #0f1382;
+}
+
+.h-color {
+  color: #ff1515;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.723125rem;
+}
+
+.curser {
+  cursor: pointer;
+}

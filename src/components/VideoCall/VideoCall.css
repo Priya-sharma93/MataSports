@@ -1,0 +1,210 @@
+/* General Styling */
+.chat-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 180px; /* Slightly reduced width */
+  height: 50px; /* Keeps it compact */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.chat-container:hover {
+  height: 250px; /* Expands when hovered */
+}
+
+.chat-header {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: bold;
+  padding: 6px;
+  text-align: center;
+  border-radius: 6px 6px 0 0;
+  font-size: 12px;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 4px;
+  max-height: 180px;
+  font-size: 12px;
+  scrollbar-width: thin;
+}
+
+.chat-container input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  outline: none;
+}
+
+.chat-container button {
+  margin-top: 4px;
+  width: 100%;
+  padding: 5px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.chat-container button:hover {
+  background: linear-gradient(90deg, #0056b3, #008cb3);
+  transform: scale(1.05);
+}
+
+.video-call-container {
+  background-color: #f3370e;
+  /* min-height: 100vh; */
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* overflow: hidden; */
+}
+.videoDiv {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+}
+.video-chat-row {
+  /* flex-grow: 1; */
+  margin: 1rem;
+}
+
+/* Video Section */
+.video-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100vh;
+}
+
+.video-wrapper {
+  width: 80%;
+  height: 80vh;
+  position: relative;
+  margin: 1rem auto;
+}
+
+.video-image {
+  width: 40rem;
+  height: 30rem;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* top-right caller */
+.top-right-card {
+  min-width: 10rem;
+  min-height: 10rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.caller-image {
+  width: 8rem; /* Adjust size of the image */
+  height: 8rem;
+  margin-top: 0;
+  /* Makes the image circular */
+}
+
+.calling-icon {
+  color: green; /* Icon color */
+  font-size: 1.5rem; /* Adjust size of the icon */
+  margin-left: 1rem; /* Space between image and icon */
+}
+/* Controls */
+.controls {
+  /* width: 80%; */
+  height: auto;
+  background: #fff;
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for better appearance */
+}
+
+.controls .control-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.controls .control-btn:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.controls .control-label {
+  font-size: 0.8rem;
+  margin-top: 0.3rem; /* Adds space between button and label */
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .video-wrapper {
+    height: 40vh;
+  }
+
+  .chat-col {
+    border-left: none;
+  }
+
+  .controls .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .controls .control-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-wrapper {
+    height: 30vh;
+  }
+
+  .controls .control-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .controls .control-label {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,101 @@
+#menu_1 {
+  height: 120vh;
+  width: 14.5vw;
+  background-color: rgb(233, 227, 227);
+  z-index: 100;
+}
+#leftarrow {
+  font-size: 2vw;
+  color: grey;
+  position: relative;
+  right: 2vw;
+}
+#menu-title {
+  font-size: 1vw;
+  margin-top: 0.2vw;
+}
+#sidenavgirlmenu {
+  width: 2vw;
+  height: 2vw;
+  margin-top: 2vw;
+  position: absolute;
+  object-fit: cover;
+  margin-left: 1.5rem;
+  margin-top: 0vw;
+}
+#profile {
+  font-size: 1vw;
+  margin-top: 1vw;
+  margin-left: 5vw;
+}
+#leftmenuicon {
+  font-size: 2vw;
+  margin-left: 2vw;
+  margin-top: 1vw;
+}
+#chathistory {
+  font-weight: 600;
+  font-size: 1vw;
+  margin-top: 3vw;
+  margin-left: 1vw;
+}
+#chatgirlone {
+  height: 3vw;
+  width: 3vw;
+  object-fit: cover;
+}
+#chatboyone {
+  height: 3vw;
+  width: 3vw;
+  object-fit: cover;
+  margin-top: 1vw;
+}
+#chatmen {
+  height: 3vw;
+  width: 3vw;
+  object-fit: cover;
+  margin-top: 1vw;
+}
+#n-1 {
+  text-wrap: nowrap;
+  font-size: 1vw;
+  margin-top: 1vw;
+  font-weight: 600;
+}
+#n-2 {
+  text-wrap: nowrap;
+  font-size: 1vw;
+  margin-top: 2vw;
+  font-weight: 600;
+}
+#n-3 {
+  text-wrap: nowrap;
+  font-size: 1vw;
+  margin-top: 1.5vw;
+  font-weight: 600;
+}
+#btn {
+  height: 3vw;
+  width: 8vw;
+  margin-top: 2vw;
+  background-color: #4115ee;
+  color: white;
+  font-size: 1.5vw;
+  font-weight: 700;
+  border-radius: 1vw;
+  border: none;
+}
+#start {
+  height: 3vw;
+  width: 3vw;
+  font-size: 1vw;
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+#logout {
+  margin-top: 2.5vw;
+  font-weight: 600;
+}
+#sidenav {
+  margin-top: -4.2vw;
+}

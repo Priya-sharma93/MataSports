@@ -1,0 +1,75 @@
+/* Base styles */
+.message-btn {
+  background-color: #f37114;
+  color: white;
+  font-family: Roboto;
+}
+.message-btn:hover {
+  background-color: #f45a07;
+  color: white;
+  font-family: Roboto;
+}
+
+.coach-text-size {
+  font-size: 0.7rem;
+}
+
+.athlete-p-font {
+  line-height: 20px;
+  font-family: Roboto;
+}
+
+/* Coach Edit Profile Page CSS */
+.upload-button-css {
+  color: #6744f3 !important;
+  background-color: white !important;
+  border: 2px solid #6744f3 !important;
+}
+
+.upload-button-css:hover {
+  background-color: #6744f3 !important;
+  color: white !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-me-coach-profile {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+
+  .about-me-coach-profile {
+    margin: 0 auto !important;
+  }
+
+  .about-me-coach-profile {
+    min-width: 100% !important;
+    text-align: center;
+  }
+  .upload-photo-css {
+    font-size: 0.64rem;
+    width: 5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .about-me-coach-profile {
+    max-width: 100% !important;
+    text-align: center;
+  }
+
+  .about-me-coach-profile {
+    min-width: 100% !important;
+  }
+
+  .coach-text-size {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-me-coach-profile {
+    max-width: 50% !important;
+  }
+}

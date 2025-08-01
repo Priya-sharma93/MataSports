@@ -1,0 +1,108 @@
+
+.payment-page {
+ padding: 20px;
+background: #F3370E;
+height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.wallet-wrapper{
+  width: 80vw;
+  height: 100vh;
+  position: relative;
+  margin:  auto;
+}
+
+.wallet-p-section{
+  border-radius: 8px;
+  padding: 15px;
+  height: 80vh;
+ 
+  
+  
+}
+
+.game-image-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Profile Image */
+
+.player-profile-image {
+  width: 300px;
+  height: 390px;
+  margin-top: 0;
+  position: relative;
+
+  
+}
+/* Card Styling */
+.user-card {
+  width: 18.75rem;
+  height: 10rem;
+  justify-items: baseline;
+  align-items: baseline;
+  padding: 0.5rem;
+  margin-top: 15px;
+}
+
+.user-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: left; /
+}
+
+.user-card .card-subtitle h6 {
+  font-size: 1rem;
+  color: #000;
+  text-align: left; 
+}
+
+.user-card .card-text p {
+  font-size: 0.9rem;
+  color: #000;
+  text-align: left; 
+  margin: 0; 
+}
+
+/* Transaction Card Styling */
+.transaction-card-container {
+  padding: 0 15px;
+}
+
+.transaction-card{
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 80vh;
+  margin-top: 1rem;
+}
+/* Adjust layout padding and margins */
+
+
+@media (max-width: 768px) {
+  .profile-image {
+    max-width: 150px; /* Smaller images on smaller screens */
+  }
+
+  .user-card {
+    width: 100%; /* Ensure card takes full width on smaller screens */
+  }
+
+  .transaction-card {
+    margin-top: 20px; /* Add some spacing between sections */
+  }
+}
+
+/* Optional: Adjust Button Size and Layout for Smaller Screens */
+@media (max-width: 576px) {
+  .transaction-card {
+    padding: 15px; /* Less padding on smaller screens */
+  }
+
+  .profile-image {
+    max-width: 120px; /* Further reduce image size on very small screens */
+  }
+}

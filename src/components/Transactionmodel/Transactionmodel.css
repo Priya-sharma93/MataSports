@@ -1,0 +1,73 @@
+.transaction-box {
+    min-height: 35vw;
+    width: 70vw;
+    background-color: #11146d;
+    /* position: absolute; */
+  
+    z-index: 1000;
+    left: -15%;
+    border-radius: 1vw;
+    top: -25%;
+    padding-bottom: 1vw;
+  
+    transform: scale(0.8);
+  }
+  .header {
+    height: 4vw;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .amt-line {
+    display: flex;
+    gap: 2vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+    margin-top: 2vw;
+  }
+  .amt-row {
+    height: 4vw;
+    width: 30vw;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .recive {
+    height: 100%;
+    width: 70%;
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: flex-start;
+  }
+  .wallet-img {
+    height: 100%;
+    width: 5vw;
+    background-color: white;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .amt-name {
+    display: flex;
+    color: #eed920;
+  }
+  .cross {
+    height: 1.5vw;
+    width: 1.5vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }

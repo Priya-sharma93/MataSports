@@ -1,0 +1,145 @@
+/* AthleteHome.css */
+.hero-container {
+  background: linear-gradient(
+    269.02deg,
+    rgba(21, 25, 121, 0.83) 55.53%,
+    rgba(39, 46, 223, 0.83) 78.74%
+  );
+
+  min-height: 100vh;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 32px;
+  position: relative;
+}
+
+.small-heading {
+  font-size: 30px;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.main-heading {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+.academy {
+  color: #ffffff;
+}
+
+.description {
+  font-size: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 42.19px;
+  margin-top: 50px;
+}
+
+.images-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.wing {
+  width: 20%;
+  height: auto;
+  opacity: 0.6;
+  position: absolute;
+}
+
+.left-wing {
+  left: 0;
+}
+
+.right-wing {
+  right: 0;
+}
+
+.ellipse-container {
+  position: relative;
+  width: 50%;
+  height: auto;
+}
+
+.ellipse {
+  width: 100%;
+  height: auto;
+}
+
+.cyclist {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 48px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .wing {
+    width: 30%;
+  }
+
+  .ellipse-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 16px;
+  }
+
+  .content-wrapper {
+    padding: 16px;
+  }
+
+  .small-heading {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .main-heading {
+    font-size: 36px;
+  }
+
+  .wing {
+    width: 40%;
+  }
+
+  .ellipse-container {
+    width: 90%;
+  }
+}

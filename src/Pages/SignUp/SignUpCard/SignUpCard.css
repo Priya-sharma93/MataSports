@@ -1,0 +1,216 @@
+.custom-card {
+  /* width: 100%; */
+  /* max-width: 30rem; */
+  margin: 1rem auto;
+  /* max-height: 50rem; */
+}
+
+.emailpassWidth {
+  width: 350px;
+}
+
+.divforPass {
+  width: 600px;
+}
+
+.custom-heading {
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #000000;
+}
+
+.custom-para {
+  color: #cf1919;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+
+  text-align: center;
+}
+
+.custom-h5 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 2.125rem;
+  text-align: center;
+}
+
+.custom-loginWith {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 23.125rem;
+  border: 0.0625rem solid #00000078;
+  box-shadow: 0rem 0.25rem 0.25rem 0rem #00000040;
+  color: #00000087;
+  border-radius: 0.5rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.125rem;
+  text-align: left;
+}
+
+.form-btn {
+  /* width: 100%; */
+  /* max-width: 23.125rem; */
+  border-radius: 10px;
+  padding: 1rem 4rem;
+
+  height: 3rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ea1964 0%, #fe9d2b 100%);
+  border: none;
+  box-shadow: 0rem 0.25rem 0.25rem 0rem #00000040;
+  margin-bottom: 0.625rem;
+}
+
+@media (max-width: 768px) {
+  .custom-heading {
+    font-size: 1.5rem;
+  }
+
+  .custom-para,
+  .custom-h5 {
+    font-size: 1.25rem;
+  }
+
+  .divforPass {
+    width: 375px;
+  }
+
+  .emailpassWidth {
+    width: 280px;
+  }
+
+  .form,
+  .form-btn {
+    max-width: 18rem;
+  }
+
+  .custom-h3 {
+    text-align: center;
+  }
+  .pageForm {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-heading {
+    font-size: 1.25rem;
+  }
+
+  .custom-para,
+  .custom-h5 {
+    font-size: 0.875rem;
+  }
+  .custom-card {
+    max-width: 25rem;
+  }
+
+  .form,
+  .form-btn {
+    max-width: 16rem;
+  }
+}
+
+.google {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 0.3125rem;
+}
+.icon {
+  background: url("../../../assets/mail-icon.svg") no-repeat left center;
+  background-position: 1.25rem center;
+  padding-left: 4.375rem;
+}
+
+.password {
+  background: url("../../../assets/password-icon.svg") no-repeat left center;
+  background-position: 1.25rem center;
+  padding-left: 4.375rem;
+}
+
+.user-icon {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.form-btn-save {
+  background: linear-gradient(90deg, #ea1964 0%, #fe9d2b 100%);
+  box-shadow: 0rem 0.25rem 0.25rem 0rem #00000040;
+  color: #ffffff;
+  width: 12.625rem;
+  height: 2.75rem;
+  margin: 1.25rem;
+  padding: 0.75rem 4.75rem;
+  align-self: center;
+  border-radius: 1rem;
+}
+
+.profile {
+  background: url("../../../assets/divprofile.svg") no-repeat left center;
+  background-position: 1.25rem center;
+  padding-left: 4.375rem;
+}
+
+.phone {
+  background: url("../../../assets/phone-icon.svg") no-repeat left center;
+  background-position: 1.25rem center;
+  padding-left: 4.375rem;
+}
+
+.dob {
+  background: url("../../../assets/dob-icon.svg") no-repeat left center;
+  background-position: 1.25rem center;
+  padding-left: 4.375rem;
+}
+
+.pin {
+  background: url("../../../assets/pin-icon.svg") no-repeat left center;
+  background-position: 1.25rem center;
+  padding-left: 4.375rem;
+}
+
+.detail {
+  background: url("../../../assets/detail-icon.svg") no-repeat left;
+  background-position: 1.25rem top;
+  padding-left: 4.375rem;
+  height: 5.625rem;
+  padding-top: 0.3125rem;
+}
+
+.custom-h3 {
+  color: #000000;
+  font-size: 2.125rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+}
+
+.drop {
+  background: url("../../../assets/drop-icon.svg") no-repeat left top;
+  background-position: 1.25rem center;
+  padding-left: 4.375rem;
+}

@@ -1,0 +1,97 @@
+/* .athlete-section {
+  background: linear-gradient(90deg, #ed6b0d, #fcbf93);
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  z-index: 0;   
+} */
+
+/* .athlete-section::before,
+.athlete-section::after {
+  content: "";
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1; 
+} */
+
+/* .athlete-section::before {
+  width: 100%;
+  height: 80%;
+  top: 20%;
+  left: 0;
+  background-image: url("../../assets/Images/Leftcard.png");
+}
+
+.athlete-section::after {
+  width: 100%; 
+  height: 80%;
+  top: 0; 
+  left: 65%;
+  background-image: url("../../assets/Images/rightcard.png");
+} */
+
+.popular-cont {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* Ensure cards are positioned relative to this container */
+  z-index: 1; /* Cards should appear above the background images */
+}
+
+.sports-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Content aligned to the bottom */
+  width: 100%;
+  height: 18rem;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  border: 0.5rem solid white;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Ensure cards appear above the background images */
+}
+
+.sports-card img {
+  max-width: 100%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+.spt-btn {
+  width: 100%;
+  max-width: 8rem;
+  background-color: #fff;
+  font-weight: bold;
+  border: none;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .sports-card {
+    height: 14rem; /* Adjust height for smaller screens */
+  }
+
+  .spt-btn {
+    font-size: 0.9rem; /* Adjust button text size */
+  }
+}
+
+@media (max-width: 576px) {
+  .sports-card {
+    height: 12rem; /* Further reduce height for small screens */
+  }
+
+  .spt-btn {
+    font-size: 0.8rem;
+  }
+}
+
+.container {
+  border: none;
+}

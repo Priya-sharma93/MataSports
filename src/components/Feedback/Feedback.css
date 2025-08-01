@@ -1,0 +1,34 @@
+/* Feedback.css */
+.emoji {
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.emoji:hover {
+  transform: scale(1.3);
+  background-color: orange;
+}
+
+.emoji-selected {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.emoji-default {
+  background-color: #f8f9fa;
+}
+
+.feedback-description {
+  font-size: 1.2rem;
+  font-family: Robot;
+}
+
+.feedback-comment {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.feedback-submit {
+  padding: 10px 20px;
+  font-size: 1rem;
+}

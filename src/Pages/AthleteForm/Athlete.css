@@ -1,0 +1,53 @@
+.coach-landing-page {
+  background: #110e0e;
+  background: radial-gradient(
+    circle at 75% 55%,
+    rgba(20, 28, 221, 1) 12%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 1) 50%
+  );
+  padding: 1rem;
+}
+
+.gradient-circle {
+  position: relative;
+  width: 100%;
+  max-width: 42.5rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.side-ball-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  max-width: 41.9375rem;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .gradient-circle {
+    max-width: 30rem;
+  }
+  .side-ball-image {
+    max-width: 28rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .gradient-circle {
+    max-width: 20rem;
+  }
+  .side-ball-image {
+    max-width: 18rem;
+  }
+}
+
+.inputGroupAth {
+  display: flex;
+  justify-content: center;
+}

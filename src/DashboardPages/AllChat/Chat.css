@@ -1,0 +1,49 @@
+.btn {
+  width: 12%;
+}
+
+.search {
+  color: #00000069;
+}
+
+.img {
+  width: 55px;
+  height: 55px;
+}
+
+.top {
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.bg {
+  background-color: #d9d9d9b8;
+  width: 15%;
+  color: #00000069;
+}
+
+.bg1 {
+  background-color: #d9d9d9b8;
+}
+
+.ml {
+  margin-left: 4%;
+}
+
+.bg-2 {
+  background-color: #141cdd;
+  color: white;
+  margin-left: 40%;
+}
+
+.text-1 {
+  color: #00000069;
+}
+
+.text-3 {
+  margin-top: 3%;
+  margin-left: 60%;
+}
+#btn {
+  margin-top: 2vw;
+}

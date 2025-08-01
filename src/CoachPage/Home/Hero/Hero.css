@@ -1,0 +1,105 @@
+.hero-section1 {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 30, 90, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.heroImageDiv {
+  position: relative;
+}
+.Div2ofImage {
+  position: absolute;
+  left: 29px;
+  bottom: 49px;
+  transform: rotate(40deg);
+}
+.imagelefthero {
+  width: 236px;
+  height: 188px;
+  object-fit: cover;
+}
+.image-wrapper {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  transform: rotate(6deg);
+  border-radius: 30%;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.text-yellow-200 {
+  color: rgb(216, 196, 16);
+}
+.image-wrapper.left-image {
+  transform: rotate(6deg);
+}
+
+.image-wrapper.right-image {
+  transform: rotate(-6deg);
+}
+
+.hero-image {
+  border-radius: 25%;
+  object-fit: cover;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+@media (min-width: 576px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.hero-description {
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .hero-description {
+    font-size: 1.25rem;
+  }
+  .hero-button {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-description {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-button {
+  width: 15rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 575px) {
+  .hero-button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

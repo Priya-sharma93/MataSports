@@ -1,0 +1,111 @@
+.calendar-container {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.notification-card, .accepted-notifications-card {
+  background-color: #00796b;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.notification-box, .accepted-box {
+  background-color: #004d40;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.notification-actions {
+  display: flex; 
+  justify-content: center; 
+  gap: 15px; 
+  margin-top: 10px;
+}
+
+.floating-call-icons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.call-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-button.accept {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.call-button.reject {
+  background-color: #E53935;
+  color: white;
+}
+.accept-btn, .reject-btn {
+  padding: 4px 8px;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+p{
+  padding: 0px;
+  font-size: 15px;
+  margin: 0px;
+}
+
+.accept-btn {
+  background: linear-gradient(135deg, #4CAF50, #388E3C);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 128, 0, 0.2);
+}
+
+.reject-btn {
+  background: linear-gradient(135deg, #E53935, #B71C1C);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(255, 0, 0, 0.2);
+}
+
+.accept-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #388E3C, #2E7D32);
+}
+
+.reject-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #B71C1C, #9C1515);
+}
+.call-button.chat {
+    background: #007bff; /* Blue chat button */
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+.call-button.chat:hover {
+    background: #0056b3; /* Darker blue on hover */
+}

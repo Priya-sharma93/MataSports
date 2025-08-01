@@ -1,0 +1,71 @@
+.parent {
+  position: relative;
+  margin-left: 4rem;
+}
+#womenone {
+  height: 3.2vw;
+  width: 3.2vw;
+  background-image: cover;
+  border-radius: 50%;
+}
+#firstname {
+  height: 3vw;
+  width: 8vw;
+  font-weight: 700;
+  background-color: rgb(28, 27, 29);
+  color: black; /* Ensures the text is visible */
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  align-items: center;
+  text-align: center; /* Centers the text inside the element */
+  font-size: 1.5vw;
+}
+.graph {
+  height: 22.5vw;
+  width: 32vw;
+  top: 2vw;
+  /* right: -1vw; */
+  /* left: -2vw; */
+  border-radius: 1px;
+  position: relative;
+  margin-left: 0vw;
+  margin-right: 2vw;
+}
+#bargraph {
+  height: 28vw;
+  width: 44vw;
+  top: -1vw;
+  margin-left: -5vw;
+  border-radius: 1px;
+  position: relative;
+  transform: scale(0.8);
+}
+#customer {
+  height: 10vw;
+  width: 80%;
+}
+#Christina {
+  white-space: nowrap;
+  height: 2vw;
+  text-decoration: none;
+  width: 4vw;
+  font-size: 1vw;
+  font-weight: 700;
+  margin-left: 2vw;
+}
+#hello {
+  height: 2vw;
+  width: 10vw;
+  margin-top: 1vw;
+  color: grey;
+  font-weight: 600;
+  justify-content: left;
+  margin-left: -4vw;
+  white-space: nowrap;
+}
+.professional-girl {
+  height: 20vh;
+  width: 14vw;
+  margin-top: 1vw;
+}

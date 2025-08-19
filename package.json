@@ -23,7 +23,7 @@
     "@mui/icons-material": "^6.2.1",
     "@mui/material": "^6.2.1",
     "@stream-io/video-react-sdk": "^1.8.7",
-    "@zegocloud/zego-uikit-prebuilt": "^2.14.3-beta",
+    "@zegocloud/zego-uikit-prebuilt": "^2.15.1",
     "agora-rtc-sdk-ng": "^4.23.0",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.5",
@@ -46,6 +46,7 @@
     "recharts": "^2.15.3",
     "rollup": "^4.29.1",
     "socket.io-client": "^4.8.1",
+    "uuid": "^11.1.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {

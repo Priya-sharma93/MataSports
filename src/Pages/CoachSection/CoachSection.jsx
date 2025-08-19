@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Row, Col, Dropdown, Form, InputGroup } from "react-bootstrap";
+import { Card, Row, Col, Dropdown, Form, InputGroup, Alert } from "react-bootstrap";
 import blueball1 from "../../assets/Images/Leftcard.png/";
 import blueball2 from "../../assets/Images/rightcard.png";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -8,36 +8,60 @@ import axios from "axios";
 import config from "../../config";
 import AthHeader from "../AthPage/AthHeader/AthHeader";
 import cookies from "js-cookie";
+import { socket } from "../../socket";
+import { v4 as uuidv4 } from 'uuid';
 
 const CoachSection = () => {
   const navigate = useNavigate();
-  const { sportName } = useParams(); // Get the sport name from the URL
+  const { sportName } = useParams();
   const [filteredCoaches, setFilteredCoaches] = useState([]);
   const [apiCoaches, setApiCoaches] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedSports, setSelectedSports] = useState([]);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const userID = JSON.parse(localStorage.getItem("user_id"));
+  const [showBusyAlert, setShowBusyAlert] = useState(false);
 
-  const initiateCall = (coachId) => {
-    // Navigate to the VideoCall component and start the call
-    window.location.href = `/videocall/${sportName}/${coachId}`;
+  useEffect(() => {
+    socket.on('connect', () => {
+      socket.emit("register", { userID });
+    });
+
+    // Listen for the coach's status response
+    socket.on('coachStatus', (data) => {
+      if (data.status === 'on-call') {
+        setShowBusyAlert(true);
+        setTimeout(() => setShowBusyAlert(false), 5000);
+      } else if (data.status === 'available') {
+        // If the coach is available, proceed with the call
+        const roomID = uuidv4();
+        socket.emit("initiateCall", { roomID, from: userID, coachID: data.coachID });
+        navigate(`/video-call/${roomID}/${userID}`);
+      }
+    });
+
+    return () => {
+      socket.off('connect');
+      socket.off('coachStatus');
+    };
+  }, []);
+
+  const handleCallNow = (coach) => {
+    // First, check the coach's status before attempting a call
+    socket.emit("checkCoachStatus", { coachID: coach.id });
   };
 
   useEffect(() => {
     const fetchCoaches = async () => {
       try {
         const token = cookies.get("auth_token");
-        console.log("coach section token: ", token);
-
         const response = await axios.get(`${config.baseURL}/coaches`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log("API Response:", response.data); // Check API response
         const coachesData = response.data.coaches;
-
         if (Array.isArray(coachesData)) {
           setApiCoaches(coachesData);
           filterCoachesBySport(coachesData);
@@ -47,34 +71,27 @@ const CoachSection = () => {
       }
     };
     fetchCoaches();
-  }, [sportName]); // Re-fetch coaches when sportName changes
+  }, [sportName]);
 
   const filterCoachesBySport = (coaches) => {
-    console.log("Sport Name:", sportName); // Check the sportName from URL
     const filtered = coaches.filter(
       (coach) => coach.domains.toLowerCase() === sportName.toLowerCase()
     );
-    console.log("Filtered Coaches:", filtered); // Log filtered coaches
     setFilteredCoaches(filtered);
   };
 
   const onHandleSearch = (e) => {
     const input = e.target.value.toLowerCase();
     setSearchInput(input);
-
     if (input.trim() === "") {
-      // If input is empty, reset the filtered coaches to original list
       setFilteredCoaches(apiCoaches);
       return;
     }
-
     const searchedCoaches = apiCoaches.filter((coach) => {
       const matchesCoachName = coach.coach_name.toLowerCase().includes(input);
       const matchesSport = coach.domains.toLowerCase().includes(input);
-
       return matchesCoachName || matchesSport;
     });
-
     setFilteredCoaches(searchedCoaches);
   };
 
@@ -85,25 +102,23 @@ const CoachSection = () => {
         selectedSports.some((e) =>
           coach.domains.toLowerCase().includes(e.toLowerCase())
         );
-
       const languageMatch =
         selectedLanguages.length === 0 ||
         selectedLanguages.some((e) =>
           coach.languages.toLowerCase().includes(e.toLowerCase())
         );
-
       return sportMatch && languageMatch;
     });
-
     setFilteredCoaches(filtered);
     setShowDropdown(false);
   };
+
   const handleSaveData = (e, coach) => {
     e.preventDefault();
-
     localStorage.setItem("coach_profile", JSON.stringify(coach));
     navigate("/ChatBox");
-  }
+  };
+
   return (
     <div
       className="position-relative overflow-hidden "
@@ -113,6 +128,24 @@ const CoachSection = () => {
       }}
     >
       <AthHeader />
+      {showBusyAlert && (
+        <Alert variant="warning" onClose={() => setShowBusyAlert(false)} dismissible
+          style={{
+            position: 'fixed',
+            top: '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+            width: 'auto',
+            minWidth: '300px',
+            maxWidth: '90%',
+            textAlign: 'center',
+            boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+            borderRadius: '8px'
+          }}>
+          Coach is currently on another call. Please try again later.
+        </Alert>
+      )}
       <img
         src={blueball1}
         alt="Ball Image"
@@ -135,7 +168,6 @@ const CoachSection = () => {
           transform: "rotate(90deg)",
         }}
       />
-
       {/* Header Section */}
       <div className="mb-4 mt-4" style={{ maxWidth: "100vw" }}>
         <div className="d-flex flex-wrap justify-content-between gap-3 align-items-center px-3">
@@ -172,7 +204,6 @@ const CoachSection = () => {
               >
                 Exp: select
               </Dropdown.Toggle>
-
               <Dropdown.Menu className="p-3">
                 <Form>
                   <Form.Check
@@ -191,7 +222,6 @@ const CoachSection = () => {
                     value="Low to High"
                     onChange={(e) => onHandleSelect(e.target.value)}
                   />
-                  {/* Experience Range Dropdown */}
                   <div className="mt-4">
                     <label className="d-block">Experience Range</label>
                     <Form.Check
@@ -226,12 +256,10 @@ const CoachSection = () => {
               >
                 Filters
               </Dropdown.Toggle>
-
               <Dropdown.Menu className="p-4 rounded-5">
                 <p className="fw-bold fs-5">Select Your Favourite Sports</p>
                 <hr />
                 <p className="fw-bold">Outdoor Sports</p>
-                {/*Outdoor Sports Name */}
                 <ToggleButton
                   options={[
                     "Tennis",
@@ -250,7 +278,6 @@ const CoachSection = () => {
                   setSelectedItems={setSelectedSports}
                 />
                 <p className="fw-bold mt-3">Select Your Language</p>
-                {/* Indoor Sports Name */}
                 <ToggleButton
                   options={[
                     "English",
@@ -363,18 +390,16 @@ const CoachSection = () => {
                       </p>
                       <p className="ms-4 mb-1 custom-link" style={{ fontSize: "0.9rem", textDecoration: "none", color: "inherit" }}>
                         <Link to="/feedback" style={{ textDecoration: "none", color: "inherit" }} s>Ratings :
-
                           <span style={{ color: "gold", fontSize: "1rem" }}>⭐⭐⭐⭐⭐</span></Link>
                       </p>
                     </div>
                     <div className="d-flex justify-content-around mt-3">
                       <button
                         className="rounded-5 px-3 py-1 fs-6 shadow-sm custom-call-now-btn border-0 fw-bold"
-                        onClick={() => initiateCall(coach.id)}
+                        onClick={() => handleCallNow(coach)}
                       >
                         Call Now
                       </button>
-
                       <Link onClick={(e) => handleSaveData(e, coach)}>
                         <button className="rounded-5 px-3 py-1 fs-6 shadow-sm custom-chat-now-btn border-0 fw-bold">
                           Chat Now

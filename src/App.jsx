@@ -55,7 +55,7 @@ import ChatStateProvider from "./components/ChatBox/Context/ChatStateProvider";
 import CoachChat from "./components/CoachChat/CoachChat";
 import ChatInterface from "./components/ChatBox/ChatInterface";
 import ChatSidebar from "./components/CoachChat/ChatSidebar";
-import VideoCallIndex from "./components/NewVideoCall/VideoCallIndex";
+import VideoCallPage from "./components/NewVideoCall/VideoCallRoom";
 
 function App() {
   const [getAuthenticated, setAuthenticated] = useState(false);
@@ -118,17 +118,16 @@ function App() {
               />
               <Route path="/chat" element={<Chat />} />
               <Route path="/videocall" element={<HomePage />} />
+
+              <Route path="/video-call/:roomID/:userID" element={<VideoCallPage />} />
+              
               {/* <Route
-                path="/videocall/:sportName/:coachId"
+                path="/video-call/:sportName/:coachId"
                 element={<RoomPage />}
               /> */}
 
-               <Route
-                path="/videocall/:sportName/:coachId"
-                element={<VideoCallIndex />}
-              />
               <Route path="/" element={<HomePage />} />
-              <Route path="/room/:roomId" element={<VideoCallIndex />} />
+              <Route path="/room/:roomId" element={<RoomPage />} />
 
               {/* <Route path="/videocall/:coachId" element={<VideoCall />} />
           <Route

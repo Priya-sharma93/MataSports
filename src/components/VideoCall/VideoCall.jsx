@@ -8,7 +8,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import "./VideoCall.css";
 import AthHeader from "../../Pages/AthPage/AthHeader/AthHeader";
 
-//  const socket = io("http://127.0.0.1:5000");
+ const socket = io("http://localhost:10000");
 //const socket = io("https://sports-backend-zhr8.onrender.com/socket.io");
 
 const VideoCall = () => {
@@ -35,7 +35,7 @@ const VideoCall = () => {
   }, []);
 
   const startCall = async () => {
-     const socket = io("http://127.0.0.1:5000");
+     const socket = io("http://127.0.0.1:10000");
     if (!peerConnection.current) createPeerConnection();
     socket.emit("start-call", { room: coachId });
   

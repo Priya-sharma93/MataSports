@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 const CoachChatBox = () => {
   const [coachUser, setCoachUser] = useState(null);
   // const coachUser = JSON.parse(localStorage.getItem("user_profile"));
-  console.log("Coach User:", coachUser);
+  // console.log("Coach User:", coachUser);
   const [socket, setSocket] = useState(null);
   const [athleteList, setAthleteList] = useState([]);
   const [selectedAthlete, setSelectedAthlete] = useState(null);
@@ -12,9 +12,6 @@ const CoachChatBox = () => {
   const [chatMessages, setChatMessages] = useState([]);
   const messagesEndRef = useRef(null);
 
-  // console.log(chatMessages,'chatMessages')
-
-  // console.log(selectedAthlete, 'selectedAthlete')
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user_profile"));
@@ -28,7 +25,7 @@ const CoachChatBox = () => {
 
     ws.onopen = () => {
       console.log("WebSocket connected");
-      // Send coach identity
+      // Send coach identity.
       ws.send(
         JSON.stringify({
           id: coachUser.id,

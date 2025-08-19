@@ -3,9 +3,9 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { FaPhone, FaPhoneSlash, FaCommentDots } from 'react-icons/fa';
-
 import './CoachSchedule.css';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { socket } from "../../socket";
 
 function CoachSchedule() {
   const [date, setDate] = useState(new Date());
@@ -14,51 +14,66 @@ function CoachSchedule() {
   const [pendingMeetings, setPendingMeetings] = useState([]);
   const navigate = useNavigate();
   const location = useLocation()
-  const coachId = location.state.coachId || {}
+  const coachId = location.state?.coachId || {};
+  const [incomingCall, setIncomingCall] = useState(null);
+  const userID = JSON.parse(localStorage.getItem("user_id"));
 
+  useEffect(() => {
+    socket.on('connect', () => {
+      socket.emit("register", { userID });
+    });
+    
+    socket.on("incomingCall", ({ roomID, from }) => {
+      setIncomingCall({ roomID, from });
+    });
+
+    return () => {
+      socket.off("connect");
+      socket.off("incomingCall");
+    };
+  }, []);
+
+  const acceptCall = () => {
+    socket.emit("acceptCall", {
+      roomID: incomingCall.roomID,
+      to: incomingCall.from,
+    });
+    navigate(`/video-call/${incomingCall.roomID}/${userID}`);
+  };
+
+  const handleEndCall = () => {
+    socket.emit("endCall", { userID });
+  };
 
   useEffect(() => {
     fetchMeetings(coachId);
   }, [coachId]);
 
-
-  // ✅ Fetch accepted meetings for the coach
   const fetchMeetings = async (coachId) => {
-    try {
-      // const response = await fetch(`https://sports-backend-x6w5.onrender.com/coaches/${coachId}/meetings`);
-      const response = await fetch(`http://127.0.0.1:5004/coaches/${coachId}/meetings`);
-      // const response = await fetch(`http://127.0.0.1:5004/coaches/7/meetings`);
-      if (!response.ok) throw new Error(`Error: ${response.status}`);
-      const data = await response.json();
-      setMeetings(data);
-
-      // Identify pending meetings (those not accepted or declined)
-      setPendingMeetings(data.filter(m => m.status !== 'accepted'));
-    } catch (error) {
-      console.error('Error fetching meetings:', error);
-    }
+    // try {
+    //   const response = await fetch(`http://127.0.0.1:5004/coaches/${coachId}/meetings`);
+    //   if (!response.ok) throw new Error(`Error: ${response.status}`);
+    //   const data = await response.json();
+    //   setMeetings(data);
+    //   setPendingMeetings(data.filter(m => m.status !== 'accepted'));
+    // } catch (error) {
+    //   console.error('Error fetching meetings:', error);
+    // }
   };
 
-  // ✅ Accept a meeting
   const handleAcceptUpdate = async (meetingId) => {
     try {
-      // const response = await fetch(`https://sports-backend-x6w5.onrender.com/meetings/status`, {
       const response = await fetch(`http://127.0.0.1:5004/meetings/status`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ meeting_id: meetingId, status: 'accepted' }),
       });
-
       if (!response.ok) {
         const errorData = await response.json();
         alert(errorData.error || 'Error accepting meeting');
         return;
       }
-
       const updatedMeeting = await response.json();
-      console.log('Accepted:', updatedMeeting);
-
-      // Update meetings and pending
       setMeetings(prev => [...prev.filter(m => m.id !== meetingId), updatedMeeting]);
       setPendingMeetings(prev => prev.filter(m => m.id !== meetingId));
     } catch (error) {
@@ -66,22 +81,16 @@ function CoachSchedule() {
     }
   };
 
-  // ✅ Decline a meeting (status = "declined" → deletes it)
   const handleDeclineCall = async (meetingId) => {
     if (!meetingId) return;
     try {
-      // const response = await fetch(`https://sports-backend-x6w5.onrender.com/meetings/status`, {
       const response = await fetch(`http://127.0.0.1:5004/meetings/status`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ meeting_id: meetingId, status: 'declined' }),
       });
-
       if (!response.ok) throw new Error(`Error: ${response.status}`);
       const data = await response.json();
-      console.log('Declined:', data);
-
-      // Remove declined meeting from state
       setMeetings(prev => prev.filter(m => m.id !== meetingId));
       setPendingMeetings(prev => prev.filter(m => m.id !== meetingId));
     } catch (error) {
@@ -118,14 +127,12 @@ function CoachSchedule() {
             </div>
           </Card>
         </Col>
-
         {/* Center Section: Calendar */}
         <Col xs={4}>
           <div className="calendar-container">
             <Calendar onChange={setDate} value={date} />
           </div>
         </Col>
-
         {/* Right Section: Accepted Meetings */}
         <Col xs={4}>
           <Card className="accepted-notifications-card">
@@ -145,7 +152,6 @@ function CoachSchedule() {
           </Card>
         </Col>
       </Row>
-
       {/* Floating Video Call & Chat Buttons */}
       <div className="floating-call-icons">
         <button className="call-button accept" onClick={startVideoCall}>
@@ -158,8 +164,18 @@ function CoachSchedule() {
           <FaCommentDots />
         </button>
       </div>
-
-
+      {incomingCall && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <h3>Incoming Call</h3>
+            <p>From: {incomingCall.from}</p>
+            <div className="popup-buttons">
+              <button className="new-accept-btn" onClick={acceptCall}>Accept</button>
+              <button className="new-reject-btn" onClick={() => setIncomingCall(null)}>Reject</button>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Video Call Placeholder */}
       {showVideoCall && <div>Video Call UI</div>}
     </Container>
@@ -167,4 +183,3 @@ function CoachSchedule() {
 }
 
 export default CoachSchedule;
-

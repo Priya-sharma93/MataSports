@@ -5,7 +5,7 @@ import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
 const RoomPage = () => {
     const roomId = "testRoom123";  // Hardcoded test
     const AppSign = "5d4f809e3d10598fb29b3a5ddf5151338d6070ac917bad29b759be584b45e259";
-    const { sportName, coachid = "defaultUser_" + Math.floor(Math.random() * 1000000) } = useParams();
+    const { sportName, coachid = "2" } = useParams();
     const userName = "Priya";
     const roomContainer = useRef(null);
     const navigate = useNavigate(); // Hook for navigation

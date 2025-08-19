@@ -180,10 +180,10 @@ function Categories() {
               ))
             )}
           </Row>
-          
+
         </Container>
       </div>
-     
+
     </div>
   );
 }

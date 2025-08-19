@@ -1,6 +1,6 @@
 // src/config.js
 const config = {
-  baseURL: "https://sports-backend-oxiz.onrender.com",
+  baseURL: " https://sports-backend-0mgj.onrender.com",
   // baseURL: "http://localhost:10000"
 };
 

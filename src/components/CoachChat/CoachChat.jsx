@@ -3,15 +3,12 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 
 const CoachChatBox = () => {
   const [coachUser, setCoachUser] = useState(null);
-  // const coachUser = JSON.parse(localStorage.getItem("user_profile"));
-  // console.log("Coach User:", coachUser);
   const [socket, setSocket] = useState(null);
   const [athleteList, setAthleteList] = useState([]);
   const [selectedAthlete, setSelectedAthlete] = useState(null);
   const [message, setMessage] = useState("");
   const [chatMessages, setChatMessages] = useState([]);
   const messagesEndRef = useRef(null);
-
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user_profile"));
@@ -72,6 +69,25 @@ const CoachChatBox = () => {
 
     return () => ws.close();
   }, [coachUser]);
+
+  useEffect(() => {
+    if (!selectedAthlete || !coachUser) return;
+
+    fetch(
+      `https://sports-backend-0mgj.onrender.com/chat/history?athlete_id=${selectedAthlete.id}&coach_id=${coachUser.id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const formatted = data.map((msg) => ({
+          id: msg.id,
+          message: msg.message,
+          from: msg.sender === "coach" ? coachUser : selectedAthlete,
+          timestamp: msg.timestamp,
+        }));
+        setChatMessages(formatted);
+      })
+      .catch((error) => console.error("Error fetching messages:", error));
+  }, [selectedAthlete, coachUser]);
 
   const sendMessage = () => {
     if (!message.trim() || !selectedAthlete) return;

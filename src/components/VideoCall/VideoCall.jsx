@@ -7,9 +7,13 @@ import { BsChatText, BsChatDots } from "react-icons/bs";
 import { FaAngleRight } from "react-icons/fa6";
 import "./VideoCall.css";
 import AthHeader from "../../Pages/AthPage/AthHeader/AthHeader";
+console.log(socket, 'socket1');
 
- const socket = io("http://localhost:10000");
+const socket = io("http://15.207.189.73:10000");
 //const socket = io("https://sports-backend-zhr8.onrender.com/socket.io");
+
+console.log(socket, 'socket2');
+
 
 const VideoCall = () => {
   const navigate = useNavigate();
@@ -35,28 +39,28 @@ const VideoCall = () => {
   }, []);
 
   const startCall = async () => {
-     const socket = io("http://127.0.0.1:10000");
+    const socket = io("http://localhost:10000");
     if (!peerConnection.current) createPeerConnection();
     socket.emit("start-call", { room: coachId });
-  
+
     try {
       // Initialize local stream with enhanced audio features
       localStream.current = await navigator.mediaDevices.getUserMedia({
         video: true,
         audio: { echoCancellation: true, noiseSuppression: true, sampleRate: 44100 },
       });
-  
+
       localVideoRef.current.srcObject = localStream.current;
-  
+
       // Add tracks to peer connection
       localStream.current.getAudioTracks().forEach(track => {
         peerConnection.current.addTrack(track, localStream.current);
       });
-  
+
       localStream.current.getVideoTracks().forEach(track => {
         peerConnection.current.addTrack(track, localStream.current);
       });
-  
+
       // Create and send the offer
       const offer = await peerConnection.current.createOffer();
       await peerConnection.current.setLocalDescription(offer);
@@ -65,7 +69,7 @@ const VideoCall = () => {
       console.error("Error accessing media devices:", err);
     }
   };
-  
+
   const createPeerConnection = () => {
     peerConnection.current = new RTCPeerConnection({
       iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
@@ -108,19 +112,19 @@ const VideoCall = () => {
       localStream.current.getTracks().forEach(track => track.stop()); // Stop all media tracks
       localStream.current = null; // Reset local stream
     }
-  
+
     if (peerConnection.current) {
       peerConnection.current.close(); // Close WebRTC connection
       peerConnection.current = null; // Reset peer connection
     }
-  
+
     // Notify server that the call has ended
     socket.emit("end-call", { room: coachId });
-  
+
     // Navigate to feedback page
     navigate(`/feedback/${sportName}`, { state: { coachId } });
   };
-  
+
   // const endCall = () => {
   //   if (localStream.current) {
   //     localStream.current.getTracks().forEach((track) => track.stop());
@@ -141,22 +145,22 @@ const VideoCall = () => {
         return;
       }
     }
-    
-  
+
+
     // Toggle audio track enabled state
     localStream.current.getAudioTracks().forEach(track => {
       track.enabled = !track.enabled;
-      
+
 
     });
-  
+
     setIsMicEnabled(prev => !prev);
-  
+
     // Log the current state of the mic
     console.log("Mic enabled:", localStream.current.getAudioTracks().map(track => track.enabled));
-    console.log(localStream.current.getAudioTracks().map(track => ({enabled: track.enabled, readyState: track.readyState})));
+    console.log(localStream.current.getAudioTracks().map(track => ({ enabled: track.enabled, readyState: track.readyState })));
   };
-  
+
 
   const toggleCamera = () => {
     if (localStream.current) {
@@ -176,11 +180,11 @@ const VideoCall = () => {
           video: true,
           audio: true,
         });
-  
+
         screenStream.getTracks().forEach((track) => {
           peerConnection.current.addTrack(track, screenStream);
         });
-  
+
         localVideoRef.current.srcObject = screenStream;
         setIsSharing(true);
       } else {
@@ -192,7 +196,7 @@ const VideoCall = () => {
       console.error("Error sharing screen:", err);
     }
   };
-  
+
 
   const sendMessage = () => {
     if (message.trim()) {
@@ -232,9 +236,9 @@ const VideoCall = () => {
             </Button>
           </Col>
           <Col xs={2} className="text-center">
-          <Button variant="dark" className="control-btn" onClick={toggleShare}>
-          {isSharing ? <FaShare /> : <FaShare />}</Button>
-         </Col>
+            <Button variant="dark" className="control-btn" onClick={toggleShare}>
+              {isSharing ? <FaShare /> : <FaShare />}</Button>
+          </Col>
           <Col xs={2} className="text-center">
             <Button variant="secondary" className="control-btn" onClick={toggleChat}>
               {chatVisible ? <BsChatDots /> : <BsChatText />}
@@ -248,22 +252,22 @@ const VideoCall = () => {
         </Row>
 
         {chatVisible && (
-       <div className="chat-container">
-       <div className="chat-header">Live Chat</div>
-       <div className="messages">
-       {messages.map((msg, index) => (
-        <p key={index}><strong>{msg.sender}:</strong> {msg.text}</p>
-       ))}
-        </div>
-      <input
-      type="text"
-      value={message}
-      onChange={(e) => setMessage(e.target.value)}
-      placeholder="Type a message..."
-    />
-    <button onClick={sendMessage}>Send</button>
-  </div>
-)}
+          <div className="chat-container">
+            <div className="chat-header">Live Chat</div>
+            <div className="messages">
+              {messages.map((msg, index) => (
+                <p key={index}><strong>{msg.sender}:</strong> {msg.text}</p>
+              ))}
+            </div>
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Type a message..."
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
+        )}
 
       </div>
     </>

@@ -8,10 +8,11 @@ const ChatBox = () => {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
 
-  console.log(user, 'user')
-  console.log(recipient, 'recipient')
+  // console.log(user, 'user')
+  // console.log(recipient, 'recipient')
 
   useEffect(() => {
+    if (!user || !recipient) return;
     fetch(`https://sports-backend-0mgj.onrender.com/chat/history?athlete_id=${user?.id}&coach_id=${recipient?.id}`)
       .then((res) => res.json())
       .then((data) => {

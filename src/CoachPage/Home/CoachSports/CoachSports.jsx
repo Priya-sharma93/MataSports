@@ -14,7 +14,8 @@ import { toast } from "react-toastify";
 const SportCard = ({ sport, bgClass, imageSrc, imageWidth, imageHeight }) => (
   <div
     className={`sport-card col-6 col-md-3 p-2 mb-4`}
-    onClick={() => toast.error(`${sport} clicked!`)}
+    //onClick={() => toast.error(`${sport} clicked!`)}
+    onClick={()=> toast.error("Please Sign Up first to access this")}
     role="button"
   >
     <div className={`sport-card-bg ${bgClass} rounded p-3`}>

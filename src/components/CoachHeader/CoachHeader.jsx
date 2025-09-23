@@ -52,6 +52,9 @@ function CoachHeader() {
               <Nav.Link as={Link} to="/home">
                 Home
               </Nav.Link>
+              <Nav.Link as={Link} to="/aboutus" onClick={handleClose}>
+              AboutUs
+            </Nav.Link>
               <Nav.Link as={Link} to="/coachblog">
                 Blogs
               </Nav.Link>
@@ -104,6 +107,9 @@ function CoachHeader() {
           <Nav className="flex-column mb-3">
             <Nav.Link as={Link} to="/" onClick={handleClose}>
               Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/aboutus" onClick={handleClose}>
+              AboutUs
             </Nav.Link>
             <Nav.Link as={Link} to="/coachblog" onClick={handleClose}>
               Blogs

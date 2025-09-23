@@ -56,6 +56,7 @@ import CoachChat from "./components/CoachChat/CoachChat";
 import ChatInterface from "./components/ChatBox/ChatInterface";
 import ChatSidebar from "./components/CoachChat/ChatSidebar";
 import VideoCallPage from "./components/NewVideoCall/VideoCallRoom";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   const [getAuthenticated, setAuthenticated] = useState(false);
@@ -112,6 +113,7 @@ function App() {
                 path="/coachwallet"
                 element={getAuthenticated ? <WalletPage /> : <SignIn />}
               />
+                             <Route path="/aboutus" element={<AboutUs/>} />
               <Route
                 path="/dashboard"
                 element={getAuthenticated ? <Dashboard /> : <SignIn />}

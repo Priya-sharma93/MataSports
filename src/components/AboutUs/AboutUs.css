@@ -1,0 +1,140 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  body {
+  font-family: Roboto, sans-serif;
+}
+
+  background: linear-gradient(
+    90deg,
+   
+    rgba(30, 30, 90, 1) 50%,
+   
+  );
+ 
+}
+.about-us-wrapper {
+  background-color: rgb(2, 2, 41); /* or any shade of blue you prefer */
+  color: white; /* optional: improves readability */
+  padding: 20px; /* optional: adds spacing */
+}
+
+
+.about-us-container {
+  line-height: 20px;
+  font-family: Roboto;
+  /* font-family: 'Poppins', sans-serif;
+  line-height: 1.6; */
+  color: #333;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+
+section {
+    margin:0; 
+  /* margin-bottom: 2.5rem;
+  padding: 1.5rem;  */
+  /* border-radius: 12px; */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  background-color: #f9f9f9;
+   font-family: Roboto;
+  /* background-color: #e6e2ee; */
+}
+
+section:nth-child(even) {
+  background-color: #ffffff;
+   font-family: Roboto;
+  
+}
+p{
+  padding: 1.5rem;
+  font-family: Roboto;
+  font: 1em sans-serif;
+  line-height: 30px;
+}
+
+.about-us-container h1,
+.about-us-container h2,
+.about-us-container h3 {
+  background-color: rgba(30, 30, 90, 1);
+  border: #102a43;
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  text-align: center;
+  padding: 1rem;
+  /* border-radius: 8px; */
+   font-family: Roboto;
+}
+
+
+
+ul li {
+  margin-bottom: 0.5rem;
+   font-family: Roboto;
+   padding: 0.5rem;
+
+}
+p {
+  padding: 1.5rem;
+   /* same dark blue as your gradient */
+  color:black; /* light text for contrast */
+  /* border-radius: 8px;  */
+}
+
+section {
+   font-family: Roboto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+section:nth-child(n) {
+  animation-delay: calc(0.2s * n); 
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.why-athai table {
+  font-family: Roboto;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.why-athai th {
+  background-color: #eef2f7;
+  color: #102a43;
+  padding: 1rem;
+  text-align: left;
+}
+
+.why-athai td {
+  padding: 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+} 
+.link-style {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;       
+  overflow-wrap: anywhere;      
+  white-space: normal; 
+}

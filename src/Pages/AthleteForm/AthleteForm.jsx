@@ -223,6 +223,7 @@ const AthleteForm = () => {
               name="fullname"
               value={form.fullname}
               onChange={handleForm}
+              style={{ paddingLeft: "60px" }}
               onBlur={handleBlur}
               className="form profile"
             />
@@ -242,6 +243,7 @@ const AthleteForm = () => {
               value={form.phone}
               onChange={handleForm}
               onBlur={handleBlur}
+              style={{ paddingLeft: "60px" }}
               className="form phone"
             />
           </Form.Group>
@@ -260,6 +262,7 @@ const AthleteForm = () => {
               value={form.dob}
               onChange={handleForm}
               onBlur={handleBlur}
+              style={{ paddingLeft: "60px" }}
               className="form dob"
             />
           </Form.Group>
@@ -277,6 +280,7 @@ const AthleteForm = () => {
               name="address"
               value={form.address}
               onChange={handleForm}
+              style={{ paddingLeft: "60px" }}
               onBlur={handleBlur}
               className="form pin"
             />
@@ -294,6 +298,7 @@ const AthleteForm = () => {
               placeholder="Details about your health"
               name="healthDetails"
               value={form.healthDetails}
+              style={{ paddingLeft: "60px" }}
               onChange={handleForm}
               onBlur={handleBlur}
               className="form detail"

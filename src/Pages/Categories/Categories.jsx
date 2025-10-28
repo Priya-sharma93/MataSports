@@ -32,6 +32,8 @@ function Categories() {
     Hockey,
     Boxing,
     Skating,
+    // Physiotherpist,
+    // SportsSurgeon,
   };
 
   const gamesColors = {
@@ -43,6 +45,8 @@ function Categories() {
     Boxing: "linear-gradient(180deg, #EFD23B, #FCFAF2)",
     Hockey: "linear-gradient(180deg, #1FCBE2, #89DEEA, #EEF6F8)",
     Skating: "linear-gradient(180deg, #DF404A, #D31739, #F5E6EB)",
+    Physio: "linear-gradient(180deg, #A0D468, #F0F9F1)",
+    SportsSurgeon: "linear-gradient(180deg, #FF9A3C, #FFF0E6)",
   };
 
   const fetchDomains = async () => {

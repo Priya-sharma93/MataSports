@@ -79,6 +79,15 @@ const CoachSports = () => {
       bgClass: "skating-gradient",
       imageSrc: Skating,
     },
+   {
+      name: "Physiotherapist",
+      bgClass: "skating-gradient", // or create a new gradient
+    },
+    {
+      name: "sports surgeon",
+      bgClass: "sportSurgeon-gradient", // or create a new gradient
+    },
+
   ];
 
   return (

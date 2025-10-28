@@ -319,6 +319,8 @@ const CoachForm = () => {
               <option>Boxing</option>
               <option>Hockey</option>
               <option>Skating</option>
+              <option>Physiotherapist</option>
+              <option>Sports-Suusgeon</option>
             </Form.Control>
           </Form.Group>
           {err.domain && (
